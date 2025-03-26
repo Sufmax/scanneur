@@ -6,9 +6,12 @@ async function sendImage() {
     formData.append("image", fileInput);
 
     try {
-        let response = await fetch("https://scann-3cd7.onrender.com/upload", {
+        let response = await fetch("https://scann-3cd7.onrender.com/upload", { 
             method: "POST",
-            body: formData
+            body: formData,
+            headers: {
+                // Pas besoin de 'Content-Type', Fetch le gère automatiquement avec FormData
+            }
         });
 
         if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
