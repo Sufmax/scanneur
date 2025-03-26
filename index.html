@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>Uploader une image</h2>
+
+    <!-- Bouton personnalisé pour sélectionner une image -->
+    <button class="custom-file-button" onclick="document.getElementById('imageInput').click();">
+        Choisir une image
+    </button>
+    
+    <!-- Input de fichier masqué -->
+    <input type="file" id="imageInput" />
+    
     <div class="container">
         <h2>Uploader une image</h2>
         <label for="imageInput" class="custom-file-button">Choisir une image</label>
