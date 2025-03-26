@@ -1,3 +1,9 @@
+// Cette fonction sera appelée dès qu'un fichier est sélectionné
+function handleFileChange() {
+    sendImage();  // Appeler directement la fonction pour envoyer l'image
+}
+
+
 async function sendImage() {
     let fileInput = document.getElementById("imageInput").files[0];
     if (!fileInput) return alert("Sélectionnez une image");
