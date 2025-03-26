@@ -8,6 +8,28 @@ body {
     margin: 0;
 }
 
+/* Masquer l'input de fichier par défaut */
+#imageInput {
+    display: none;
+}
+
+/* Style du bouton personnalisé */
+.custom-file-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.custom-file-button:hover {
+    background-color: #218838;
+}
+
 .container {
     background: white;
     padding: 20px;
