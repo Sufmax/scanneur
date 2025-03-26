@@ -5,7 +5,7 @@ async function sendImage() {
     let formData = new FormData();
     formData.append("image", fileInput);
 
-    let response = await fetch("https://mon-api.onrender.com/upload", { // Remplace avec ton URL Render
+    let response = await fetch("https://scann-3cd7.onrender.com/upload", { // Remplace avec ton URL Render
         method: "POST",
         body: formData
     });
