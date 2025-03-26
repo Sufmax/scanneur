@@ -10,8 +10,9 @@ async function sendImage() {
             method: "POST",
             body: formData,
             headers: {
-                // Pas besoin de 'Content-Type', Fetch le gère automatiquement avec FormData
-            }
+                "Accept": "application/json"
+            },
+            mode: "cors"  // Active le mode CORS
         });
 
         if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
