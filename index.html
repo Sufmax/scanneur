@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h2>Uploader une image</h2>
-        <input type="file" id="imageInput">
+        <label for="imageInput" class="custom-file-button">Choisir une image</label>
+        <input type="file" id="imageInput" style="display: none;" onchange="handleFileChange()">
         <button onclick="sendImage()">Envoyer</button>
         <p id="result"></p>
     </div>
