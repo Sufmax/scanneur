@@ -8,10 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <h2>Uploader une image</h2>
+        <h2>Scanner un QR code</h2>
         <label for="imageInput" class="custom-file-button">Choisir une image</label>
-        <input type="file" id="imageInput" style="display: none;" onchange="handleFileChange()">
-        <button onclick="sendImage()">Envoyer</button>
+        <input type="file" id="imageInput"  accept="image/*" style="display: none;" onchange="handleFileChange()">
         <p id="result"></p>
     </div>
     <script src="script.js"></script>
