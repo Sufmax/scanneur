@@ -5,11 +5,17 @@ async function sendImage() {
     let formData = new FormData();
     formData.append("image", fileInput);
 
-    let response = await fetch("https://scann-3cd7.onrender.com/upload", { // Remplace avec ton URL Render
-        method: "POST",
-        body: formData
-    });
+    try {
+        let response = await fetch("https://scann-3cd7.onrender.com/upload", {
+            method: "POST",
+            body: formData
+        });
 
-    let data = await response.json();
-    document.getElementById("result").innerText = data.text;
+        if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
+
+        let data = await response.json();
+        document.getElementById("result").innerText = `Résultat : ${data.result}`;
+    } catch (error) {
+        document.getElementById("result").innerText = `Erreur : ${error.message}`;
+    }
 }
