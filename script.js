@@ -22,6 +22,7 @@ async function sendImage() {
 
         let data = await response.json();
         document.getElementById("result").innerText = 'Résultat : ${data.result}';
+        showMessage(`✅ Résultat : ${data.result}`, "success");
     } catch (error) {
         document.getElementById("result").innerText = '❌ Erreur : ${error.message}';
     }
