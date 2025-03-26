@@ -2,8 +2,7 @@ async function sendImage() {
     let fileInput = document.getElementById("imageInput").files[0];
     if (!fileInput) return alert("Sélectionnez une image");
     
-    result.innerHTML = "⏳ Analyse en cours...";
-    result.className = "loading";
+    document.getElementById("result").innerText = "⏳ Analyse en cours...";
 
     let formData = new FormData();
     formData.append("image", fileInput);
@@ -21,8 +20,7 @@ async function sendImage() {
         if (!response.ok) throw new Error('Erreur HTTP : ${response.status}');
 
         let data = await response.json();
-        "document.getElementById("result").innerText = 'Résultat : ${data.result}';"
-        showMessage(`✅ Résultatf : ${data.result}`, "success");
+        document.getElementById("result").innerText = 'Résultat : ${data.result}';
     } catch (error) {
         document.getElementById("result").innerText = '❌ Erreur : ${error.message}';
     }
