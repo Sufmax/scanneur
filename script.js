@@ -21,7 +21,7 @@ async function sendImage() {
         if (!response.ok) throw new Error('Erreur HTTP : ${response.status}');
 
         let data = await response.json();
-        document.getElementById("result").innerText = 'Résultat : ${data.result}';
+        "document.getElementById("result").innerText = 'Résultat : ${data.result}';"
         showMessage(`✅ Résultat : ${data.result}`, "success");
     } catch (error) {
         document.getElementById("result").innerText = '❌ Erreur : ${error.message}';
