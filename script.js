@@ -1,6 +1,9 @@
 async function sendImage() {
     let fileInput = document.getElementById("imageInput").files[0];
     if (!fileInput) return alert("Sélectionnez une image");
+    
+    result.innerHTML = "⏳ Analyse en cours...";
+    result.className = "loading";
 
     let formData = new FormData();
     formData.append("image", fileInput);
@@ -15,11 +18,11 @@ async function sendImage() {
             mode: "cors"  // Active le mode CORS
         });
 
-        if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
+        if (!response.ok) throw new Error('Erreur HTTP : ${response.status}');
 
         let data = await response.json();
-        document.getElementById("result").innerText = `Résultat : ${data.result}`;
+        document.getElementById("result").innerText = 'Résultat : ${data.result}';
     } catch (error) {
-        document.getElementById("result").innerText = `Erreur : ${error.message}`;
+        document.getElementById("result").innerText = '❌ Erreur : ${error.message}';
     }
 }
